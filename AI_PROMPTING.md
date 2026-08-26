@@ -111,3 +111,35 @@ Continue backend implementation by adding the event ingestion endpoint using the
 ### Outcome & Adjustments
 
 The AI implemented the `POST /api/events` endpoint with request validation, video existence checking, parameterized SQL, server/database-generated timestamps, and appropriate error handling. Review and testing pending.
+
+
+
+## 5. Frontend — Analytics Dashboard
+
+### Tool Used
+
+Claude Sonnet 5 (chat) + ChatGPT
+
+### Context
+
+Implement the initial frontend dashboard using the existing Vite + TypeScript setup, focusing on analytics API integration, table display, pagination, and basic UI states. A reference screenshot was provided for the page layout.
+
+### Exact Prompt Used
+
+> Let's implement frontend. Don't recreate or unnecessarily change the existing setup.
+>
+> 1. Set up the API client and types for `GET /api/analytics/videos`.
+> 2. Fetch and display video analytics in a table.
+> 3. Calculate conversion rate on the frontend as `addToCarts / views`, handling zero views appropriately.
+> 4. Implement pagination using the pagination data returned by the API.
+> 5. Handle loading, error, and no-data states.
+> 6. Keep the page minimal with - navbar, page title, short description/subtitle analytics table, pagination
+> 7. Use semantic HTML and basic accessibility practices.
+> 8. Keep the implementation simple and avoid unnecessary state-management libraries, UI libraries, or abstractions.
+>
+> Don't implement the Simulate Traffic functionality or detailed styling yet. Follow layout from screenshot.
+
+### Outcome & Adjustments
+
+The AI implemented the analytics API integration, TypeScript types, video analytics table, frontend conversion-rate calculation, pagination, and loading/error/no-data states. The page structure was kept minimal and aligned with the provided reference layout. Review in progress.
+
