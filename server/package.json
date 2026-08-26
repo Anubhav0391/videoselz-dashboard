@@ -1,12 +1,13 @@
 {
-  "name": "server",
+  "name": "videoselz-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Shoppable Video Analytics Dashboard - backend API",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "db:seed": "tsx src/db/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +15,12 @@
   "type": "commonjs",
   "dependencies": {
     "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.6",
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^26.3.0",
     "tsx": "^4.23.12",
