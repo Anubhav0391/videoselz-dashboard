@@ -82,3 +82,32 @@ Continue backend implementation by adding only the video analytics endpoint usin
 ### Outcome & Adjustments
 
 The AI implemented the paginated video analytics endpoint with conditional aggregation, a LEFT JOIN to include videos with zero events, pagination metadata, query-parameter validation, parameterized SQL, and basic error handling. No major adjustment were made at this point.
+
+
+
+## 4. Backend — Engagement Events API
+
+### Tool Used
+
+Claude Sonnet 5 (chat)
+
+### Context
+
+Continue backend implementation by adding the event ingestion endpoint using the existing SQLite setup. Focus on request validation, video existence, secure database operations, and error handling.
+
+### Exact Prompt Used
+
+> Continue with the existing backend implementation. Don't change or recreate the existing setup unless required.
+>
+> Now implement only the `POST /api/events` endpoint:
+>
+> 1. Accept `videoId` and `eventType`, validate request body
+> 2. Check that the referenced video exists and return appropriate errors.
+> 3. Use parameterized SQL queries.
+> 4. Handle invalid requests and database/server errors with appropriate responses.
+>
+> Follow the existing project structure and coding style. Avoid overengineering.
+
+### Outcome & Adjustments
+
+The AI implemented the `POST /api/events` endpoint with request validation, video existence checking, parameterized SQL, server/database-generated timestamps, and appropriate error handling. Review and testing pending.
