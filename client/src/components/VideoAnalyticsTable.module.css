@@ -2,11 +2,13 @@
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  overflow: hidden;
+  overflow-x: auto; /* scrolls horizontally on narrow viewports instead of breaking the layout */
+  width: 100%;
 }
 
 .table {
   width: 100%;
+  min-width: 640px; /* keeps columns legible; below this width the wrapper scrolls instead of squeezing them */
   border-collapse: collapse;
 }
 
@@ -20,6 +22,7 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
 }
 
 .table tbody th,
@@ -36,10 +39,15 @@
   border-bottom: none;
 }
 
-.table tbody tr:nth-child(even) {
-  background: #fcfcfd;
-}
-
 .videoTitle {
   font-weight: 600;
+}
+
+/* Truncates long video titles / product names instead of wrapping or
+   stretching the table; the row's `title` attribute shows the full value. */
+.truncate {
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

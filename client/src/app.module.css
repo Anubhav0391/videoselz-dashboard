@@ -4,12 +4,17 @@
 }
 
 .header {
+  display: flex;
+  align-items: center;
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
   padding: 1rem 2rem;
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
   font-size: 1.125rem;
   color: #111827;
@@ -22,9 +27,7 @@
 }
 
 .pageHeading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  text-align: center;
   margin-bottom: 1.5rem;
 }
 
@@ -36,17 +39,38 @@
 }
 
 .subtitle {
-  margin: 0.25rem 0 0;
+  margin: 0.5rem 0 1.5rem;
   color: #6b7280;
   font-size: 0.95rem;
 }
 
-.statusMessage {
-  padding: 1rem 0;
+.statusMessage,
+.errorMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2.5rem 0;
   color: #6b7280;
+  font-size: 0.95rem;
 }
 
 .errorMessage {
-  padding: 1rem 0;
   color: #b91c1c;
+}
+
+/* Smaller outer padding once the viewport gets tight, per the reference's
+   responsive behavior (ignoring its hamburger menu, as instructed). */
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
 }

@@ -1,3 +1,4 @@
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import styles from './Pagination.module.css';
 
 interface PaginationProps {
@@ -15,6 +16,7 @@ export function Pagination({ page, totalPages, total, onPageChange, disabled = f
   return (
     <nav aria-label="Video analytics pagination" className={styles.pagination}>
       <button type="button" className={styles.button} onClick={() => onPageChange(page - 1)} disabled={!canGoPrev}>
+        <FiChevronLeft aria-hidden="true" />
         Previous
       </button>
       <span className={styles.summary} aria-live="polite">
@@ -22,6 +24,7 @@ export function Pagination({ page, totalPages, total, onPageChange, disabled = f
       </span>
       <button type="button" className={styles.button} onClick={() => onPageChange(page + 1)} disabled={!canGoNext}>
         Next
+        <FiChevronRight aria-hidden="true" />
       </button>
     </nav>
   );

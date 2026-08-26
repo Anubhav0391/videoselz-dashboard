@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
-import { fetchVideoAnalytics } from "../api/analytics";
-import type { PaginationMeta, VideoAnalytics } from "../types/analytics";
+import { useEffect, useState } from 'react';
+import { fetchVideoAnalytics } from '../api/analytics';
+import type { PaginationMeta, VideoAnalytics } from '../types/analytics';
+import type { EventType } from '../types/events';
 
 const DEFAULT_LIMIT = 5;
 
@@ -11,7 +12,7 @@ interface UseVideoAnalyticsResult {
   error: string | null;
   page: number;
   setPage: (page: number) => void;
-  refetch: () => void;
+  applyEventLocally: (videoId: number, eventType: EventType) => void;
 }
 
 export function useVideoAnalytics(
@@ -22,10 +23,6 @@ export function useVideoAnalytics(
   const [pagination, setPagination] = useState<PaginationMeta | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  // Bumping this re-runs the effect below without changing page/limit —
-  // gives callers a way to refresh the current page (e.g. after simulating
-  // traffic later) without duplicating the fetch logic.
-  const [reloadToken, setReloadToken] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -47,10 +44,12 @@ export function useVideoAnalytics(
         setError(
           err instanceof Error
             ? err.message
-            : "Failed to load video analytics.",
+            : 'Failed to load video analytics.',
         );
       } finally {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
     }
 
@@ -59,9 +58,37 @@ export function useVideoAnalytics(
     return () => {
       cancelled = true;
     };
-  }, [page, limit, reloadToken]);
+  }, [page, limit]);
 
-  const refetch = useCallback(() => setReloadToken((t) => t + 1), []);
+  function applyEventLocally(videoId: number, eventType: EventType) {
+    setVideos((prev) =>
+      prev.map((video) => {
+        if (video.videoId !== videoId) return video;
 
-  return { videos, pagination, loading, error, page, setPage, refetch };
+        switch (eventType) {
+          case 'view':
+            return { ...video, views: video.views + 1 };
+
+          case 'click':
+            return { ...video, clicks: video.clicks + 1 };
+
+          case 'add_to_cart':
+            return { ...video, addToCarts: video.addToCarts + 1 };
+
+          default:
+            return video;
+        }
+      }),
+    );
+  }
+
+  return {
+    videos,
+    pagination,
+    loading,
+    error,
+    page,
+    setPage,
+    applyEventLocally,
+  };
 }

@@ -30,10 +30,12 @@ export function VideoAnalyticsTable({ videos }: VideoAnalyticsTableProps) {
         <tbody>
           {videos.map((video) => (
             <tr key={video.videoId}>
-              <th scope="row" className={styles.videoTitle}>
+              <th scope="row" className={`${styles.videoTitle} ${styles.truncate}`} title={video.title}>
                 {video.title}
               </th>
-              <td>{video.productName}</td>
+              <td className={styles.truncate} title={video.productName}>
+                {video.productName}
+              </td>
               <td>{video.views}</td>
               <td>{video.clicks}</td>
               <td>{video.addToCarts}</td>
