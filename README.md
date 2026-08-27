@@ -492,7 +492,7 @@ AI-generated code was reviewed, modified where necessary, and tested before bein
 
 ### Video Pitch
 
-[https://www.youtube.com/watch?v=VIDEO_PITCH_PLACEHOLDER](https://www.youtube.com/watch?v=VIDEO_PITCH_PLACEHOLDER)
+[https://youtu.be/PRbBLgfqK1E](https://youtu.be/PRbBLgfqK1E)
 
 ### Technical Walkthrough
 
