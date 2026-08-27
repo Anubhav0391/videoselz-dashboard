@@ -58,7 +58,6 @@ function App() {
               <Pagination
                 page={pagination.page}
                 totalPages={Math.ceil(pagination.total / pagination.limit)}
-                total={pagination.total}
                 onPageChange={setPage}
               />
             )}

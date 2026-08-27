@@ -1,9 +1,10 @@
 .tableWrapper {
   background: #fff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #edeff4;
   border-radius: 12px;
   overflow-x: auto; /* scrolls horizontally on narrow viewports instead of breaking the layout */
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 
 .table {
@@ -14,21 +15,21 @@
 
 .table thead th {
   text-align: left;
-  padding: 0.875rem 1.25rem;
+  padding: 1rem 1.5rem;
   background: #f9fafb;
   color: #6b7280;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #edeff4;
   white-space: nowrap;
 }
 
 .table tbody th,
 .table tbody td {
   text-align: left;
-  padding: 1rem 1.25rem;
+  padding: 1.5rem;
   border-bottom: 1px solid #f0f0f0;
   color: #111827;
   font-weight: 400;

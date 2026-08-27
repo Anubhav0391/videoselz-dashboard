@@ -1,21 +1,21 @@
 .pagination {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
+  padding: 0.8rem;
+  border: 1px solid #e1e3e8;
+  border-radius: 50%;
   background: #fff;
   color: #111827;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 

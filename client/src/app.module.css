@@ -1,14 +1,14 @@
 .page {
   min-height: 100vh;
-  background: #fafafa;
 }
 
 .header {
   display: flex;
   align-items: center;
   background: #fff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1rem 2rem;
+  border-bottom: 1px solid #edeff4;
+  padding: 1.2rem 2.2rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 
 .brand {
