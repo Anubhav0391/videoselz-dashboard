@@ -190,3 +190,28 @@ Continue the existing frontend implementation by adding the Simulate Traffic int
 
 The AI implemented the required functionality and UI improvements. I modified the overall layout and styling to improve spacing, visual hierarchy, responsiveness, and consistency.
 
+
+
+## 7. README Documentation
+
+### Tool Used
+
+ChatGPT
+
+### Context
+
+Create the project README based on the assignment requirements and the implemented application.
+
+### Exact Prompt Used
+
+> Create a concise, professional README.md for this project based on the assignment requirements and the current implementation.
+>
+> Include setup instructions, features, tech stack, project structure, architecture, database design, API documentation, key design decisions, validation/error handling, verification, AI collaboration, and required project/video links.
+>
+> Make sure the documentation accurately reflects the actual implementation.
+
+### Outcome & Adjustments
+
+The AI generated the initial README. I reviewed it against the actual implementation, removed redundant details, corrected project-specific information, and added the required repository and video links.
+
+
