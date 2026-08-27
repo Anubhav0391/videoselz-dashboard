@@ -496,4 +496,4 @@ AI-generated code was reviewed, modified where necessary, and tested before bein
 
 ### Technical Walkthrough
 
-[https://www.loom.com/share/TECHNICAL_WALKTHROUGH_PLACEHOLDER](https://www.loom.com/share/TECHNICAL_WALKTHROUGH_PLACEHOLDER)
+[https://drive.google.com/file/d/16NMEV7peAMOITWBizVyaAWUQatP_fl5o/view?usp=sharing](https://drive.google.com/file/d/16NMEV7peAMOITWBizVyaAWUQatP_fl5o/view?usp=sharing)
